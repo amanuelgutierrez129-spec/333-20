@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유진에셋 - Premium Financial Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#007BFF',        // Bright Blue - Main
+                        secondary: '#FF7D00',     // Orange - Module Background
+                        accent: '#FFC107',        // Yellow - Highlights & Icons
+                        neutral1: '#F0F2F5',      // Light Gray - Labels
+                        neutral2: '#B8B8A8',      // Elegant Gray-Gold - Text
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            }
+            .section-padding {
+                padding-top: 5rem;
+                padding-bottom: 5rem;
+            }
+            .hero-gradient {
+                background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+            }
+            .progress-bar {
+                transition: width 1.5s ease-in-out;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 overflow-x-hidden">
+
+<!-- Header Navigation -->
+<header id="home" class="fixed w-full top-0 z-50 bg-white/95 shadow-md transition-all">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="flex items-center justify-between py-4">
+            <a href="#home" class="flex items-center">
+                <span class="text-primary text-2xl font-bold">유진에셋</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-primary font-medium">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-primary font-medium">About Us</a>
+                <a href="#services" class="text-gray-700 hover:text-primary font-medium">Services</a>
+                <a href="#expertise" class="text-gray-700 hover:text-primary font-medium">Expertise</a>
+                <a href="#case-studies" class="text-gray-700 hover:text-primary font-medium">Case Studies</a>
+                <a href="#faq" class="text-gray-700 hover:text-primary font-medium">FAQ</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary font-medium">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden text-gray-700">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white border-t">
+        <div class="container px-4 py-3 space-y-3">
+            <a href="#home" class="block py-2 hover:text-primary mobile-link">Home</a>
+            <a href="#about" class="block py-2 hover:text-primary mobile-link">About Us</a>
+            <a href="#services" class="block py-2 hover:text-primary mobile-link">Services</a>
+            <a href="#expertise" class="block py-2 hover:text-primary mobile-link">Expertise</a>
+            <a href="#case-studies" class="block py-2 hover:text-primary mobile-link">Case Studies</a>
+            <a href="#faq" class="block py-2 hover:text-primary mobile-link">FAQ</a>
+            <a href="#contact" class="block py-2 hover:text-primary mobile-link">Contact</a>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center pt-20">
+    <div class="absolute inset-0 -z-10">
+        <img src="https://amanuelgutierrez129-spec.github.io/333-20/88.jpg" 
+             class="w-full h-full object-cover" alt="유진에셋 Hero">
+        <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+    <div class="container mx-auto px-4 relative z-10 text-white">
+        <h1 class="text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-tight text-shadow mb-6">
+            Strategic Financial <span class="text-primary">Consulting</span>
+        </h1>
+        <p class="text-lg md:text-xl max-w-xl mb-8 text-white/90">
+            Professional financial information consulting services to secure your assets and maximize your growth.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#services" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded font-medium">Our Services</a>
+            <a href="#contact" class="bg-white hover:bg-gray-100 text-gray-800 px-8 py-3 rounded font-medium">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- About Us -->
+<section id="about" class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">About 유진에셋</h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+            <p class="text-neutral2 mt-4 max-w-xl mx-auto">Trusted financial consulting with professional expertise</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="rounded-xl shadow-xl overflow-hidden">
+                <img src="https://amanuelgutierrez129-spec.github.io/333-20/89.jpg" 
+                     class="w-full h-auto" alt="About 유진에셋">
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Who We Are</h3>
+                <p class="text-gray-600 mb-4">
+                    유진에셋 is a premium financial information consulting firm based in England, established in 2015. Our team of seasoned financial experts brings together decades of collective experience from top global financial institutions, including investment banks, asset management firms, and regulatory bodies.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    Our mission is to deliver transparent, reliable, and high-value financial solutions to help clients achieve long-term financial stability and growth. We specialize in serving high-net-worth individuals, family offices, small to medium enterprises, and institutional investors across Europe and Asia.
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="bg-neutral1 p-4 rounded-lg">
+                        <i class="fa fa-check-circle text-accent text-2xl mb-2"></i>
+                        <h4 class="font-semibold">Professional Analysis</h4>
+                        <p class="text-sm text-neutral2">Data-driven insights backed by proprietary analytics</p>
+                    </div>
+                    <div class="bg-neutral1 p-4 rounded-lg">
+                        <i class="fa fa-shield text-accent text-2xl mb-2"></i>
+                        <h4 class="font-semibold">Trusted Service</h4>
+                        <p class="text-sm text-neutral2">Secure & reliable with fiduciary responsibility</p>
+                    </div>
+                </div>
+                <div class="bg-primary/5 p-5 rounded-lg border-l-4 border-primary">
+                    <h4 class="font-semibold mb-2 text-primary">Our Core Values</h4>
+                    <ul class="text-gray-600 space-y-1 list-disc list-inside">
+                        <li>Integrity in all financial recommendations</li>
+                        <li>Client-centric approach to every engagement</li>
+                        <li>Continuous innovation in financial strategies</li>
+                        <li>Commitment to regulatory compliance and transparency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional About Us Content -->
+        <div class="mt-16 grid md:grid-cols-3 gap-8">
+            <div class="bg-neutral1 p-6 rounded-xl">
+                <h4 class="text-xl font-bold mb-3 text-primary">Our Vision</h4>
+                <p class="text-gray-600">To be the most trusted financial consulting partner for clients seeking sustainable wealth growth and financial security in an increasingly complex global market.</p>
+            </div>
+            <div class="bg-neutral1 p-6 rounded-xl">
+                <h4 class="text-xl font-bold mb-3 text-primary">Our Approach</h4>
+                <p class="text-gray-600">We combine quantitative analysis with qualitative judgment, leveraging cutting-edge financial technology while maintaining the human touch that is essential for personalized financial advice.</p>
+            </div>
+            <div class="bg-neutral1 p-6 rounded-xl">
+                <h4 class="text-xl font-bold mb-3 text-primary">Our Commitment</h4>
+                <p class="text-gray-600">We are committed to ongoing education and professional development, ensuring our advisors stay ahead of market trends and regulatory changes to best serve our clients.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="section-padding bg-neutral1">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+            <p class="text-neutral2 mt-4 max-w-xl mx-auto">Comprehensive financial consulting services tailored to your needs</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl p-8 shadow-md card-hover">
+                <div class="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mb-6">
+                    <i class="fa fa-line-chart text-accent text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Financial Analysis</h3>
+                <p class="text-gray-600 mb-4">Professional financial data analysis, performance evaluation, and forecasting for better decisions.</p>
+                <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                    <li>Market trend analysis and benchmarking</li>
+                    <li>Financial statement review and interpretation</li>
+                    <li>Cash flow analysis and optimization</li>
+                    <li>Performance metrics and KPI tracking</li>
+                    <li>Custom financial modeling</li>
+                </ul>
+                <a href="#" class="mt-4 inline-block text-primary font-medium hover:underline">Learn more →</a>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-md card-hover">
+                <div class="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mb-6">
+                    <i class="fa fa-briefcase text-accent text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Asset Consulting</h3>
+                <p class="text-gray-600 mb-4">Custom asset allocation and management strategies to protect and grow your wealth.</p>
+                <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                    <li>Strategic asset allocation planning</li>
+                    <li>Portfolio diversification strategies</li>
+                    <li>Asset protection and risk mitigation</li>
+                    <li>Wealth preservation planning</li>
+                    <li>Alternative asset evaluation</li>
+                </ul>
+                <a href="#" class="mt-4 inline-block text-primary font-medium hover:underline">Learn more →</a>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-md card-hover">
+                <div class="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mb-6">
+                    <i class="fa fa-university text-accent text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Investment Advice</h3>
+                <p class="text-gray-600 mb-4">Expert guidance on investment planning, risk control, and market opportunities.</p>
+                <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                    <li>Personalized investment strategy development</li>
+                    <li>Market opportunity identification</li>
+                    <li>Investment risk assessment and management</li>
+                    <li>ESG investment integration</li>
+                    <li>Investment performance review</li>
+                </ul>
+                <a href="#" class="mt-4 inline-block text-primary font-medium hover:underline">Learn more →</a>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-md card-hover">
+                <div class="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mb-6">
+                    <i class="fa fa-money text-accent text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Risk Management</h3>
+                <p class="text-gray-600 mb-4">Comprehensive risk assessment and solutions to secure your financial assets.</p>
+                <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                    <li>Comprehensive risk assessment</li>
+                    <li>Market risk mitigation strategies</li>
+                    <li>Credit risk analysis and management</li>
+                    <li>Operational risk identification</li>
+                    <li>Risk transfer and insurance solutions</li>
+                </ul>
+                <a href="#" class="mt-4 inline-block text-primary font-medium hover:underline">Learn more →</a>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-md card-hover">
+                <div class="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mb-6">
+                    <i class="fa fa-globe text-accent text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Global Finance</h3>
+                <p class="text-gray-600 mb-4">International financial consulting and cross-border asset management services.</p>
+                <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                    <li>Cross-border investment planning</li>
+                    <li>Foreign exchange risk management</li>
+                    <li>International tax optimization</li>
+                    <li>Global market entry strategy</li>
+                    <li>Cross-jurisdictional regulatory compliance</li>
+                </ul>
+                <a href="#" class="mt-4 inline-block text-primary font-medium hover:underline">Learn more →</a>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-md card-hover">
+                <div class="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mb-6">
+                    <i class="fa fa-calculator text-accent text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Financial Planning</h3>
+                <p class="text-gray-600 mb-4">Personal and corporate financial planning for long-term stability and growth.</p>
+                <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                    <li>Retirement planning and projections</li>
+                    <li>Estate and succession planning</li>
+                    <li>Tax-efficient financial planning</li>
+                    <li>Business financial planning</li>
+                    <li>Life stage financial roadmap development</li>
+                </ul>
+                <a href="#" class="mt-4 inline-block text-primary font-medium hover:underline">Learn more →</a>
+            </div>
+        </div>
+        
+        <!-- Service Process -->
+        <div class="mt-16 bg-white p-8 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-8 text-center">Our Service Process</h3>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">1. Consultation</h4>
+                    <p class="text-gray-600 text-sm">Initial discovery meeting to understand your financial goals, risk tolerance, and current situation.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa fa-file-text"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">2. Analysis</h4>
+                    <p class="text-gray-600 text-sm">Comprehensive financial analysis and evaluation of your current financial position.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa fa-lightbulb-o"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">3. Strategy</h4>
+                    <p class="text-gray-600 text-sm">Development of customized financial strategies aligned with your goals and risk profile.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa fa-refresh"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">4. Implementation & Review</h4>
+                    <p class="text-gray-600 text-sm">Execution of recommendations with ongoing monitoring and periodic strategy reviews.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Expertise -->
+<section id="expertise" class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Expertise</h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+            <p class="text-neutral2 mt-4 max-w-xl mx-auto">Professional capabilities in financial consulting backed by years of experience</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <h4 class="font-semibold">Financial Market Analysis</h4>
+                        <span class="text-primary font-semibold">95%</span>
+                    </div>
+                    <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                        <div class="progress-bar h-2 bg-primary rounded-full" style="width:0%" data-width="95%"></div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Advanced technical and fundamental analysis of global financial markets</p>
+                </div>
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <h4 class="font-semibold">Asset Management</h4>
+                        <span class="text-primary font-semibold">92%</span>
+                    </div>
+                    <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                        <div class="progress-bar h-2 bg-primary rounded-full" style="width:0%" data-width="92%"></div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Strategic asset allocation and portfolio management expertise</p>
+                </div>
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <h4 class="font-semibold">Investment Strategy</h4>
+                        <span class="text-primary font-semibold">90%</span>
+                    </div>
+                    <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                        <div class="progress-bar h-2 bg-primary rounded-full" style="width:0%" data-width="90%"></div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Custom investment strategy development across asset classes</p>
+                </div>
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <h4 class="font-semibold">Risk Control</h4>
+                        <span class="text-primary font-semibold">94%</span>
+                    </div>
+                    <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                        <div class="progress-bar h-2 bg-primary rounded-full" style="width:0%" data-width="94%"></div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Comprehensive risk assessment and mitigation strategies</p>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <h4 class="font-semibold">Financial Planning</h4>
+                        <span class="text-primary font-semibold">88%</span>
+                    </div>
+                    <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                        <div class="progress-bar h-2 bg-primary rounded-full" style="width:0%" data-width="88%"></div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Holistic financial planning for individuals and businesses</p>
+                </div>
+            </div>
+            <div class="rounded-xl shadow-xl overflow-hidden">
+                <img src="https://amanuelgutierrez129-spec.github.io/333-20/90.jpg" 
+                     class="w-full h-auto" alt="Expertise">
+            </div>
+        </div>
+        
+        <!-- Our Team Section -->
+        <div class="mt-16">
+            <h3 class="text-2xl font-bold mb-8 text-center">Our Financial Experts</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-neutral1 rounded-xl overflow-hidden card-hover">
+                    <div class="h-64 bg-gray-300 flex items-center justify-center">
+                        <i class="fa fa-user-circle text-8xl text-gray-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-1">Michael Thompson</h4>
+                        <p class="text-primary font-medium mb-3">Chief Financial Advisor</p>
+                        <p class="text-gray-600 mb-4">20+ years of experience in asset management and investment strategy, former portfolio manager at a leading investment bank.</p>
+                        <div class="flex space-x-3 text-primary">
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-neutral1 rounded-xl overflow-hidden card-hover">
+                    <div class="h-64 bg-gray-300 flex items-center justify-center">
+                        <i class="fa fa-user-circle text-8xl text-gray-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-1">Sarah Johnson</h4>
+                        <p class="text-primary font-medium mb-3">Risk Management Specialist</p>
+                        <p class="text-gray-600 mb-4">Expert in financial risk assessment and mitigation, with extensive experience in global financial markets and regulatory compliance.</p>
+                        <div class="flex space-x-3 text-primary">
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-neutral1 rounded-xl overflow-hidden card-hover">
+                    <div class="h-64 bg-gray-300 flex items-center justify-center">
+                        <i class="fa fa-user-circle text-8xl text-gray-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-1">David Chen</h4>
+                        <p class="text-primary font-medium mb-3">Global Finance Consultant</p>
+                        <p class="text-gray-600 mb-4">Specializes in cross-border investments and international financial planning, with expertise in Asian and European markets.</p>
+                        <div class="flex space-x-3 text-primary">
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Case Studies Section -->
+<section id="case-studies" class="section-padding bg-neutral1">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Case Studies</h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+            <p class="text-neutral2 mt-4 max-w-xl mx-auto">Real-world examples of our successful financial consulting engagements</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="h-64 bg-gray-300 flex items-center justify-center">
+                    <i class="fa fa-bar-chart text-8xl text-gray-400"></i>
+                </div>
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-3">Wealth Management</span>
+                    <h3 class="text-xl font-bold mb-3">High-Net-Worth Individual Portfolio Restructuring</h3>
+                    <p class="text-gray-600 mb-4">Assisted a client with £15M in assets to restructure their investment portfolio, reducing risk exposure by 35% while maintaining consistent returns of 8.2% annually.</p>
+                    <h4 class="font-semibold mb-2">Challenges Addressed:</h4>
+                    <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside mb-4">
+                        <li>Overconcentration in single asset class</li>
+                        <li>Lack of diversification across geographies</li>
+                        <li>High transaction costs eroding returns</li>
+                        <li>Inadequate risk management strategies</li>
+                    </ul>
+                    <h4 class="font-semibold mb-2">Results Achieved:</h4>
+                    <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                        <li>35% reduction in portfolio volatility</li>
+                        <li>2.1% increase in annual returns</li>
+                        <li>40% reduction in transaction costs</li>
+                        <li>Enhanced liquidity and flexibility</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="h-64 bg-gray-300 flex items-center justify-center">
+                    <i class="fa fa-building text-8xl text-gray-400"></i>
+                </div>
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-3">Corporate Finance</span>
+                    <h3 class="text-xl font-bold mb-3">Mid-Sized Business Financial Restructuring</h3>
+                    <p class="text-gray-600 mb-4">Provided comprehensive financial consulting to a manufacturing company with £20M turnover, resulting in improved cash flow and reduced operational costs.</p>
+                    <h4 class="font-semibold mb-2">Challenges Addressed:</h4>
+                    <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside mb-4">
+                        <li>Cash flow management issues</li>
+                        <li>High debt servicing costs</li>
+                        <li>Suboptimal tax structure</li>
+                        <li>Lack of financial forecasting capabilities</li>
+                    </ul>
+                    <h4 class="font-semibold mb-2">Results Achieved:</h4>
+                    <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                        <li>45% improvement in cash flow position</li>
+                        <li>18% reduction in operational costs</li>
+                        <li>£120,000 annual tax savings</li>
+                        <li>Implementation of robust financial planning systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="section-padding bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+            <p class="text-neutral2 mt-4 max-w-xl mx-auto">Answers to common questions about our financial consulting services</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+            <div class="space-y-4">
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-5 text-left bg-neutral1 hover:bg-primary/5 transition-colors">
+                        <span class="font-semibold text-lg">What types of clients do you work with?</span>
+                        <i class="fa fa-plus text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-5 bg-white">
+                        <p class="text-gray-600">We work with a diverse range of clients including high-net-worth individuals, family offices, small to medium-sized enterprises, and institutional investors. Our services are tailored to meet the unique needs of each client segment, whether you're an individual seeking personal financial planning or a business looking for corporate financial strategy.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-5 text-left bg-neutral1 hover:bg-primary/5 transition-colors">
+                        <span class="font-semibold text-lg">How do you charge for your services?</span>
+                        <i class="fa fa-plus text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-5 bg-white">
+                        <p class="text-gray-600">Our fee structure is transparent and varies based on the services provided. We offer several pricing models including: hourly rates for ad-hoc consulting, fixed fees for specific projects, and asset-based fees for ongoing portfolio management services. We provide a detailed fee proposal before beginning any engagement, and we never receive commissions or kickbacks from financial products we recommend.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-5 text-left bg-neutral1 hover:bg-primary/5 transition-colors">
+                        <span class="font-semibold text-lg">What makes 유진에셋 different from other financial consultants?</span>
+                        <i class="fa fa-plus text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-5 bg-white">
+                        <p class="text-gray-600">유진에셋 stands out through our fiduciary commitment to act in our clients' best interests, our team's deep expertise across global financial markets, and our customized approach to each client's unique situation. Unlike many firms, we do not have proprietary products to sell, allowing us to provide truly objective advice. Our combination of advanced financial analytics with personalized service ensures our clients receive the best of both technology and human expertise.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-5 text-left bg-neutral1 hover:bg-primary/5 transition-colors">
+                        <span class="font-semibold text-lg">How often will we review my financial plan?</span>
+                        <i class="fa fa-plus text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-5 bg-white">
+                        <p class="text-gray-600">We believe financial planning is an ongoing process, not a one-time event. We conduct formal quarterly reviews of your financial plan and portfolio performance, with additional meetings as needed when major life events occur or significant market changes impact your strategy. Our clients also have access to their dedicated advisor between formal reviews for any questions or concerns that may arise.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-5 text-left bg-neutral1 hover:bg-primary/5 transition-colors">
+                        <span class="font-semibold text-lg">Is my financial information secure with 유진에셋?</span>
+                        <i class="fa fa-plus text-primary transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-5 bg-white">
+                        <p class="text-gray-600">We take data security extremely seriously. All client information is protected with bank-level encryption and secure storage systems. We comply with all relevant data protection regulations including GDPR, and we have strict internal policies regarding client confidentiality. Our cybersecurity measures are regularly audited and updated to protect against evolving threats. We will never share your personal financial information with third parties without your explicit consent.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="py-16 bg-primary text-white">
+    <div class="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+            <div class="text-4xl font-bold mb-2">10+</div>
+            <p>Years of Experience</p>
+        </div>
+        <div>
+            <div class="text-4xl font-bold mb-2">1000+</div>
+            <p>Clients Served</p>
+        </div>
+        <div>
+            <div class="text-4xl font-bold mb-2">99%</div>
+            <p>Client Satisfaction</p>
+        </div>
+        <div>
+            <div class="text-4xl font-bold mb-2">30+</div>
+            <p>Financial Experts</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section-padding bg-neutral1">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+            <p class="text-neutral2 mt-4 max-w-xl mx-auto">We are ready to serve you with personalized financial solutions</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="bg-white rounded-xl p-8 shadow-md">
+                <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mr-4">
+                            <i class="fa fa-map-marker text-accent"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Location</h4>
+                            <p class="text-gray-600">England Sunderland 63 St Thomas' St</p>
+                            <p class="text-gray-600 text-sm mt-1">Office hours: Monday-Friday, 9:00 AM - 5:00 PM GMT</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mr-4">
+                            <i class="fa fa-phone text-accent"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Phone</h4>
+                            <p class="text-gray-600">+44 7599405029</p>
+                            <p class="text-gray-600 text-sm mt-1">For urgent inquiries only: +44 7911 123456</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mr-4">
+                            <i class="fa fa-envelope text-accent"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Email</h4>
+                            <p class="text-gray-600">contact@유진에셋asset.com</p>
+                            <p class="text-gray-600 text-sm mt-1">For general inquiries (response within 24 hours)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-8 border-t border-gray-200">
+                    <h4 class="font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-colors">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-colors">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-colors">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-colors">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-8 border-t border-gray-200">
+                    <h4 class="font-semibold mb-4">Request a Consultation</h4>
+                    <p class="text-gray-600 mb-4">We offer a complimentary initial consultation to discuss your financial goals and how we can help you achieve them.</p>
+                    <a href="#contact" class="inline-block bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded font-medium">
+                        Book a Consultation
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-md">
+                <h3 class="text-2xl font-bold mb-6">Send Message</h3>
+                <form id="contactForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Your Name</label>
+                        <input type="text" class="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-primary" placeholder="John Doe" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Email</label>
+                        <input type="email" class="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-primary" placeholder="john@example.com" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Phone (optional)</label>
+                        <input type="tel" class="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-primary" placeholder="+44 123 4567890">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Service Interest</label>
+                        <select class="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="">Select a service</option>
+                            <option value="financial-analysis">Financial Analysis</option>
+                            <option value="asset-consulting">Asset Consulting</option>
+                            <option value="investment-advice">Investment Advice</option>
+                            <option value="risk-management">Risk Management</option>
+                            <option value="global-finance">Global Finance</option>
+                            <option value="financial-planning">Financial Planning</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Message</label>
+                        <textarea rows="4" class="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Please describe your financial needs or questions..." required></textarea>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="privacy" class="mr-2" required>
+                        <label for="privacy" class="text-sm text-gray-600">I consent to 유진에셋 processing my personal data for the purpose of responding to my inquiry, in accordance with the privacy policy.</label>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded font-medium transition-colors">
+                        Submit Inquiry
+                    </button>
+                    <div id="successMsg" class="hidden bg-green-100 text-green-700 p-3 rounded text-center">
+                        Your inquiry has been submitted successfully! We will contact you within 24 hours.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white pt-14 pb-6">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <h2 class="text-2xl font-bold text-primary mb-4">유진에셋</h2>
+                <p class="text-gray-400 mb-4">Premium Financial Information Consulting Services tailored to secure and grow your wealth.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Services</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Financial Analysis</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Asset Consulting</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Investment Advice</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Risk Management</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Global Finance</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Company</h3>
+                <ul class="space-y-2">
+                    <li><a href="#about" class="text-gray-400 hover:text-primary transition-colors">About Us</a></li>
+                    <li><a href="#expertise" class="text-gray-400 hover:text-primary transition-colors">Our Team</a></li>
+                    <li><a href="#case-studies" class="text-gray-400 hover:text-primary transition-colors">Case Studies</a></li>
+                    <li><a href="#faq" class="text-gray-400 hover:text-primary transition-colors">FAQ</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                <ul class="space-y-2">
+                    <li class="text-gray-400"><i class="fa fa-map-marker mr-2"></i> England Sunderland 63 St Thomas' St</li>
+                    <li class="text-gray-400"><i class="fa fa-phone mr-2"></i> +44 7599405029</li>
+                    <li class="text-gray-400"><i class="fa fa-envelope mr-2"></i> contact@유진에셋asset.com</li>
+                    <li class="text-gray-400"><i class="fa fa-clock-o mr-2"></i> Mon-Fri: 9:00 AM - 5:00 PM GMT</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 pt-6 text-center">
+            <p class="text-gray-500">&copy; 2025 유진에셋. All rights reserved. | Regulated by the Financial Conduct Authority (FCA)</p>
+            <p class="text-gray-500 text-sm mt-2">유진에셋 is a trading name of 유진에셋 Financial Consulting Ltd, registered in England and Wales (Company No. 12345678)</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile Menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Close mobile menu on click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+        });
+    });
+
+    // Form Submit (always success)
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('successMsg');
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        msg.classList.remove('hidden');
+        form.reset();
+        setTimeout(() => msg.classList.add('hidden'), 5000);
+    });
+
+    // Progress bar animation
+    window.addEventListener('scroll', function() {
+        const progressBars = document.querySelectorAll('.progress-bar');
+        progressBars.forEach(bar => {
+            const rect = bar.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                bar.style.width = bar.getAttribute('data-width');
+            }
+        });
+    });
+
+    // Trigger progress bar animation on load if in view
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(() => {
+            window.dispatchEvent(new Event('scroll'));
+        }, 300);
+        
+        // FAQ toggle functionality
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                // 切换显示/隐藏
+                content.classList.toggle('hidden');
+                
+                // 图标旋转
+                if (content.classList.contains('hidden')) {
+                    icon.classList.remove('fa-minus', 'rotate-45');
+                    icon.classList.add('fa-plus');
+                } else {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus', 'rotate-45');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
